@@ -242,7 +242,7 @@ The main contributions can be summarized as follows.
     protocol alongside open source hardware and software;
     \item Building a custom SDN controller meetings the criterias of
     6LoWPAN regarding packet size and node discovery (ND);
-    \item Delegating the adaptation layer from nodes to the centralized 
+    \item Delegating the adaptation layer from the nodes to the centralized 
     SDN controller, effectively working as an edge router (or gateway) for 
     the cloud-based network;
     \item Providing global connectivity and data storage to the M2M sensor 
@@ -261,28 +261,28 @@ compared to the traditional approach.
 This section details the implementation steps of the proposed SD-NFV 
 architecture based on an 6LoWPAN testbed. The goal is to propose 
 an energy-efficient way to improve the network lifetime by adding 
-programmability feature. Hardware and software components choices 
+programmability feature. Hardware and software component choices 
 will be detailed. The developed testbed has been integrated with a cloud 
 computing platform to provide global access to the M2M sensor network.
 
 \subsubsection{6LoWPAN hardware platform}
 
-Each M2M sensor node is constitued of various subsystems, such as 
+Each M2M sensor node is constituted of various subsystems, such as 
 sensing, computation, communication and power. 6LoWPAN is an 
 energy-efficient way to provide, small devices with limited energy, 
 IPv6 connectivity. Over the last few years, there have been several 
 propositions for 6LoWPAN. Most of them were using an operating system, 
 where the 6LoWPAN protocol was being used on top of the operating system. 
-However, M2M sensor are held back by their limited energy source and 
+However, M2M sensors are held back by their limited energy source and 
 moderate memory size and processing power. Which makes running an OS 
 on sensor nodes, not the most appropriate approach.
 
-To meet the IoT promises, it is important for sensor nodes to be 
+To meet the IoT promises, it is important for sensor nodes be 
 cost-effective and energy-efficient. There are several choices available, 
 commercial or open source. The \textit{Arduino} \cite{arduino} has been 
 the choice for this testbed, which is an open source microcontroller board. 
-To comply with the IoT paradigm, it is mandatory for each nodes to be 
-addressable, controlable and accessible via the Internet. M2M nodes 
+To comply with the IoT paradigm, it is mandatory for each node to be 
+addressable, controllable and accessible via the Internet. M2M nodes 
 communicate by using the IEEE 802.15.4 standard. In this 
 experiment, Bilal R. Al-Kaseem and Hamed S. Al-Raweshidy \cite{main} 
 opted for a simple temperature and humidity sensor that will forward these 
@@ -290,16 +290,16 @@ informations to the M2M gateway. The following figure shows M2M sensor
 nodes prototypes. Sensor nodes can be classified as follows.
 \begin{itemize}
     \item \textbf{Simple Node :} Performs sensing and communication only. 
-    They do not possess any processing capabilites and cannot be 
-    selected as a cluster head. This type of nodes are composed of a 
+    They do not possess any processing capabilities and cannot be 
+    selected as a cluster head. This type of node is composed of a 
     temperature sensor and powered by a 3.7 V/1000 mAh battery. 
     \item \textbf{Advanced Node :} Performs sensing, communication and 
     processing of the data collected by the sensors. They can be 
-    definied as cluster head. This type of nodes are composed of a 
+    defined as cluster head. This type of node is composed of a 
     temperature and humidity sensor attached to an Arduino Uno board. 
     They are powered by a 9 V/1600 mAh battery.
     \item \textbf{Sink Node :} This is the final destination for all the 
-    data that has been been collected by the M2M sensor nodes. Depending 
+    data that has been collected by the M2M sensor nodes. Depending 
     on the application, it can either be mobile or static. In this 
     experiment, an Arduino Uno board has been used. Sink nodes can 
     communicate with simple or advanced nodes. They also have an 
@@ -311,7 +311,7 @@ nodes prototypes. Sensor nodes can be classified as follows.
 
 SDN and NFV share the same goal. They both endeavour to develop open 
 software for standardized network hardware. The NFV technology aims to 
-provide on-demande network functions and locate them on the most 
+provide on-demand network functions and locate them on the most 
 suitable location in the network \cite{batalle}. 
 The SDN technology is used to split the control plane and data plane 
 in order to increase the ability of the network to be programmable 
@@ -340,12 +340,12 @@ responsible for the following :
 The network discovery manager keeps the table entries up-to-date 
 by periodically checking which nodes are available. It is important that 
 the service manager takes into account each node's availability and 
-capacity to assign services in efficient manner.
+capacity to assign services in an efficient manner.
 
 \subsubsection{Cloud computing services}
 
 ThingSpeak \cite{thingspeak} is the cloud computing platform that was 
-used in this experiment. It provides free storage alonside a data 
+used in this experiment. It provides free storage alongside a data 
 visualization feature. The cloud platform is connected to the 6LoWPAN 
 network through the SD-NFV gateway. 
 
@@ -368,7 +368,7 @@ of the proposed solution.
 
 \subsection{Experimental results}
 
-This section presents the resultats obtained in \cite{main}.
+This section presents the results obtained in \cite{main}.
 It aims to provide a detailed proof-of-concept for an 
 implementation using SDN and NFV in a cloud-based M2M network. The 
 tests were carried in indoor environments. 
@@ -377,7 +377,7 @@ tests were carried in indoor environments.
 
 It costs a lot of resources to manually discover each node in a 
 6LoWPAN network. Having the SDN controller automatically monitor the 
-states of all the nodes in the network constitutes a great improvement 
+status of all the nodes in the network constitutes a great improvement 
 regarding the discovery time and thus, the node's lifetime. The figure 2 
 (taken from \cite{main} shows the network discovery delay given a 
 certain number of nodes. A very clear improvement can be seen 
@@ -393,12 +393,12 @@ on the graph. SD-NFV roughly reduces the discovery delay by 60\%.
 The node lifetime is the time span from deployment to the instant when 
 the node is considered non-functional or failed. Due to the limited 
 energy source attached to the nodes, it is crucial to be efficient 
-in energy usage. The experimental results focuses on the advanced nodes 
-because they play the important of being a cluster head. Figure 3 
+in energy usage. The experimental results focus on the advanced nodes 
+because they play the important role of being a cluster head. Figure 3 
 \cite{main} shows the difference in node lifetime with and without SD-NFV. 
 SD-NFV manages to increase the node lifetime by approximately 65\% 
 by limiting unnecessary packets transmission. Virtualizing the network 
-in the SD-NFV gateway enable nodes to perform low-energy sleep mode in 
+in the SD-NFV gateway enables nodes to perform low-energy sleep mode in 
 order to limit energy consumption. Figure 4 \cite{main} shows the 
 node activity in relation to the node energy. With SD-NFV, nodes spend 
 most of their time in idle mode, significantly increasing their lifetime.
@@ -443,7 +443,7 @@ applications are built and what are the problems we are currently facing.
 The studied article provides a proof-of-concept for a potential 
 answer to these problems. Whilst the SD-NFV technology is still in its 
 early stages, it is interesting to keep an eye on the evolution of 
-this method to see how it will fare in a few year.
+this method to see how it will fare in the next few years.
 
 \begin{thebibliography}{9}
 \bibitem{main}
