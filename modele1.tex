@@ -98,10 +98,6 @@
   \usepackage{cite}
 \fi
 
-
-
-
-
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
@@ -222,9 +218,17 @@ This section introduces a few studies related to the integration and
 implementation of SDN and NFV in low-power networks using cloud 
 computing services. Whilst there are a good number of studies dealing with 
 either SDN or NFV, studies implementing an approach using both are 
-rather scarce.
+rather scarce. Here are a two studies that we deemed interesting to look 
+at. 
 
-\textbf{Insert ref}
+Gallucio et al. \cite{sdn-wise} introduced SDN - WIreless SEnsor 
+networks (SDN-WISE) aiming to reduce packets exchange between nodes and 
+the SDN controller. Also adding progrommability features to the nodes, 
+making them able to run different applications. 
+
+Another study \cite{hybrid} explores an hybrid approach where the 
+traditional IP network is allowed to work together with an SDN-based 
+network within the same service. 
 
 \section{Contribution}\label{sec:contribution}
 
@@ -251,8 +255,8 @@ to the M2M network. The implemented testbed shows a significant
 improvement in reducing the energy consumption of M2M sensor nodes 
 compared to the traditional approach.
 
-\section{Discussion}\label{sec:discussion}
-\subsection{to do}
+\section{Experiment}\label{sec:experiment}
+\subsection{Description}
 
 This section details the implementation steps of the proposed SD-NFV 
 architecture based on an 6LoWPAN testbed. The goal is to propose 
@@ -275,13 +279,13 @@ on sensor nodes, not the most appropriate approach.
 
 To meet the IoT promises, it is important for sensor nodes to be 
 cost-effective and energy-efficient. There are several choices available, 
-commercial or open source. The \textit{Arduino} has been the choice 
-for this testbed, which is an open source microcontroller board. 
+commercial or open source. The \textit{Arduino} \cite{arduino} has been 
+the choice for this testbed, which is an open source microcontroller board. 
 To comply with the IoT paradigm, it is mandatory for each nodes to be 
 addressable, controlable and accessible via the Internet. M2M nodes 
 communicate by using the IEEE 802.15.4 standard. In this 
-experiment, Bilal R. Al-Kaseem and Hamed S. Al-Raweshidy opted for 
-a simple temperature and humidity sensor that will forward these 
+experiment, Bilal R. Al-Kaseem and Hamed S. Al-Raweshidy \cite{main} 
+opted for a simple temperature and humidity sensor that will forward these 
 informations to the M2M gateway. The following figure shows M2M sensor 
 nodes prototypes. Sensor nodes can be classified as follows.
 \begin{itemize}
@@ -303,22 +307,16 @@ nodes prototypes. Sensor nodes can be classified as follows.
     network. The sink node is powered by a permanent source.
 \end{itemize}
 
-\begin{figure*}
-    \includegraphics[width=\textwidth]{m2mnodes}
-    \caption{M2M sensor nodes prototypes in the cloud-based 6LoWPAN 
-    testbed. (a) Simple node (b) Advanced node (c) Sink node}
-\end{figure*}
-
 \subsubsection{Customized SDN Controller}
 
 SDN and NFV share the same goal. They both endeavour to develop open 
 software for standardized network hardware. The NFV technology aims to 
 provide on-demande network functions and locate them on the most 
-suitable location in the network. The SDN technology is used to split 
-the control plane and data plane in order to increase the ability of 
-the network to be programmable and reconfigurable. Whilst there are 
-benefits using SDN or NFV individually, it is possible to use both to 
-achieve further improvement. 
+suitable location in the network \cite{batalle}. 
+The SDN technology is used to split the control plane and data plane 
+in order to increase the ability of the network to be programmable 
+and reconfigurable. Whilst there are benefits using SDN or NFV 
+individually, it is possible to use both to achieve further improvement. 
 
 The proposed integration of SDN and NFV is aimed at deploying different 
 routing algorithms for the 6LoWPAN network by using a VNF on top of 
@@ -346,29 +344,32 @@ capacity to assign services in efficient manner.
 
 \subsubsection{Cloud computing services}
 
-ThingSpeak is the cloud computing platform that was used in this 
-experiment. It provides free storage alonside a data visualization 
-feature. The cloud platform is connected to the 6LoWPAN network through 
-the SD-NFV gateway. 
+ThingSpeak \cite{thingspeak} is the cloud computing platform that was 
+used in this experiment. It provides free storage alonside a data 
+visualization feature. The cloud platform is connected to the 6LoWPAN 
+network through the SD-NFV gateway. 
 
 \subsubsection{Remote End-User Application}
 
-In this experiment a simple MATLAB(MATLAB REF) application was used to 
+In this experiment a simple MATLAB application was used to 
 emulate an external IP access to the 6LoWPAN network through the 
 SD-NFV gateway. This application is used to receive the data from the 
 cloud and to send control commands to the sensor nodes.
 
-Figure 2 summarizes the general architecture of the proposed solution.
+Figure 1 (taken from \cite{main}) summarizes the general architecture 
+of the proposed solution.
 
 \begin{figure*}
-    \includegraphics[width=\textwidth]{architecture}
+    \center
+    \includegraphics[height=80mm]{architecture}
     \caption{Architecture of the SD-NFV gateway using cloud-based 
     6LoWPAN testbed}
 \end{figure*}
 
 \subsection{Experimental results}
 
-This section provides detailed proof-of-concept results for an 
+This section presents the resultats obtained in \cite{main}.
+It aims to provide a detailed proof-of-concept for an 
 implementation using SDN and NFV in a cloud-based M2M network. The 
 tests were carried in indoor environments. 
 
@@ -377,10 +378,15 @@ tests were carried in indoor environments.
 It costs a lot of resources to manually discover each node in a 
 6LoWPAN network. Having the SDN controller automatically monitor the 
 states of all the nodes in the network constitutes a great improvement 
-regarding the discovery time and thus, the node's lifetime. The figure 4 
-shows the network discovery delay given a certain number of nodes. 
-A very clear improvement can be seen on the graph. SD-NFV roughly 
-reduces the discovery delay by 60\%. 
+regarding the discovery time and thus, the node's lifetime. The figure 2 
+(taken from \cite{main} shows the network discovery delay given a 
+certain number of nodes. A very clear improvement can be seen 
+on the graph. SD-NFV roughly reduces the discovery delay by 60\%. 
+
+\begin{figure}
+  \includegraphics[height=60mm]{nd_delay}
+  \caption{Network Discovery delay.}
+\end{figure}
 
 \subsubsection{Sensing Application}
 
@@ -388,14 +394,25 @@ The node lifetime is the time span from deployment to the instant when
 the node is considered non-functional or failed. Due to the limited 
 energy source attached to the nodes, it is crucial to be efficient 
 in energy usage. The experimental results focuses on the advanced nodes 
-because they play the important of being a cluster head. Figure 5 
-shows the difference in node lifetime with and without SD-NFV. 
+because they play the important of being a cluster head. Figure 3 
+\cite{main} shows the difference in node lifetime with and without SD-NFV. 
 SD-NFV manages to increase the node lifetime by approximately 65\% 
 by limiting unnecessary packets transmission. Virtualizing the network 
 in the SD-NFV gateway enable nodes to perform low-energy sleep mode in 
-order to limit energy consumption. Figure 6 shows the node activity 
-in relation to the node energy. With SD-NFV, nodes spend most of their 
-time in idle mode, significantly increasing their lifetime.
+order to limit energy consumption. Figure 4 \cite{main} shows the 
+node activity in relation to the node energy. With SD-NFV, nodes spend 
+most of their time in idle mode, significantly increasing their lifetime.
+
+\begin{figure}
+    \includegraphics[height=60mm]{node_lifetime}
+    \caption{6LoWPAN node lifetime}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[height=50mm]{node_activity}
+    \caption{6LoWPAN node activity in relation to the node energy. 
+    (a) Traditional 6LoWPAN node. (b) SD–NFV/6LoWPAN node.}
+\end{figure}
 
 \section{Discussion about the article}
 
@@ -408,7 +425,7 @@ cloud-computing in conjunction.
 
 The article, however, does not mention any negative aspect or limitation 
 regarding SD-NFV. Security-related problems do exist and are being 
-discussed in the following article.
+discussed in the following article \cite{deqing}.
 
 \section{Post article}
 
@@ -417,7 +434,7 @@ since the publication of the studied article.
 
 The SD-NFV approach seems to be a promising approach to greatly improve 
 the current M2M communication model. There are studies extending 
-the application of SD-NFV to 5G mobile network such as \textbf{ref}. 
+the application of SD-NFV to 5G mobile network such as \cite{5g}. 
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -432,8 +449,50 @@ this method to see how it will fare in a few year.
 \bibitem{main}
 Bilal R. Al-Kaseem and Hamed S. Al-Raweshidyhamed, 
 \emph{SD-NFV as an Energy Efficient Approach for M2M Networks Using 
-Cloud-Based 6LoWPAN Testbed}, IEEE Internet of Things Journal, 2017.
+Cloud-Based 6LoWPAN Testbed}, \emph{IEEE Internet of Things Journal}, 2017.
+
+\bibitem{sdn-wise}
+L. Galluccio, S. Milardo, G. Morabito and S. Palazzo, 
+\emph{SDN-WISE: Design, prototyping and experimentation of a stateful 
+SDN solution for wireless SEnsor networks}, in
+\emph{Proc. IEEE Conf. Comput. Commun. (INFOCOM)},
+HONG KONG, Apr. 2015.
+
+\bibitem{hybrid}
+S. Salsano \emph{et al.},
+\emph{Hybrid IP/SDN networking: Open implementation and experiment 
+management tools},
+\emph{IEEE Trans. Netw. Service Managa., vol. 13, no. 1}, Mar. 2016.
+
+\bibitem{arduino}
+\emph{Arduino},
+Accessed on Dec. 2018. Online. Available at: https://www.arduino.cc
+
+\bibitem{batalle}
+J. Batalle, J. F. Riera, E. Escalona and J. A. Garcia-Espin,
+\emph{On the implementation of NFV over an OpenFlow infrastructure: 
+Routing function virtualization}, in
+\emph{Proc. IEEE SDN Future Netw. Services(SDN4FNS)},
+Trento, Italy, Nov. 2013.
+
+\bibitem{thingspeak}
+\emph{Internet-of-Things Platform},
+Accessed on Dec. 2018. Online. Available at : https://thingspeak.com
+
+\bibitem{deqing}
+Deqing Zou, Yu Lu, Bin Yuan, Haoyu Chen and Hai Jin,
+\emph{A Fine-Grained Multi-Tenant Permission Management Framework for 
+SDN and NFV}, in
+\emph{IEEE Access, vol. 6}, Apr. 2018.
+
+\bibitem{5g}
+Raul Munoz, Ricard Vilalta, Josep M. Fabrega \emph{et al.},
+\emph{BlueSPACE's SDN/NFV Architecture for 5G SDM/WDM-Enabled Fronthaul 
+with Edge Computing}, in
+\emph{IEEE Xplore}, Aug. 2018.
+
 \end{thebibliography}
+
 
 \end{document}
 
