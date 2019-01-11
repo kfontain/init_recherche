@@ -180,7 +180,7 @@ M2M, IoT, NFV, SDN, SD-NFV, energy efficiency, 6LoWPAN \\
 In this ever growing interconnected world, Machine-to-Machine (M2M) 
 communication is a key technology to build the Internet-of-Things (IoT). 
 M2M nodes are characterized by their limited power, making energy 
-efficiency one of the most important factor for the growth of this 
+efficiency one of the most important factors for the growth of this 
 technology. 
 
 The IoT can be divided into 4 different layers. The first layer is called 
@@ -189,18 +189,18 @@ sensors that will collect information about temperature, humidity,
 chemicals in the air, pressure, etc. that will be 
 collected by the second layer. The second layer is called the 
 \textit{aggregation layer}. The third layer is the processing layer. Its 
-purpose is to apply further processing to the data that have been sent by 
+purpose is to apply further processing to the data that has been sent by 
 the aggregation layer. After the processing is completed, the data can 
 be uploaded to the fourth layer, \textit{the cloud layer}. This will 
 allow the data to be used for various applications.
 
 IoT applications are based on a large number of M2M nodes. 
-Having this many M2M nodes leads to difficulty in 
+Having these many M2M nodes leads to difficulty in 
 managing and controlling the network. Software defined networking (SDN) 
 and Network functioning visualisation (NFV) are potential solutions to 
 these problems. Both SDN and NFV aim to make the network management 
 of M2M nodes simpler and more flexible by adding programmability features. 
-SDN enables sensor node to be retasked by splitting the control plane from 
+SDN enables sensor nodes to be retasked by splitting the control plane from 
 the data plane. NFV focuses on reducing operating and capital expenses, 
 by decoupling the network functions from the physical devices. 
 
@@ -226,7 +226,7 @@ networks (SDN-WISE) aiming to reduce packets exchange between nodes and
 the SDN controller. Also adding programmability features to the nodes, 
 making them able to run different applications. 
 
-Another study \cite{hybrid} explores an hybrid approach where the 
+Another study \cite{hybrid} explores a hybrid approach where the 
 traditional IP network is allowed to work together with an SDN-based 
 network within the same service. 
 
@@ -240,7 +240,7 @@ The main contributions can be summarized as follows.
 \begin{itemize}
     \item Designing a cost-effective M2M sensor node using 6LoWPAN 
     protocol alongside open source hardware and software;
-    \item Building a custom SDN controller meetings the criterias of
+    \item Building a custom SDN controller meetings the criteria of
     6LoWPAN regarding packet size and node discovery (ND);
     \item Delegating the adaptation layer from the nodes to the centralized 
     SDN controller, effectively working as an edge router (or gateway) for 
@@ -285,22 +285,22 @@ To comply with the IoT paradigm, it is mandatory for each node to be
 addressable, controllable and accessible via the Internet. M2M nodes 
 communicate by using the IEEE 802.15.4 standard. In this 
 experiment, Bilal R. Al-Kaseem and Hamed S. Al-Raweshidy \cite{main} 
-opted for a simple temperature and humidity sensor that will forward these 
-informations to the M2M gateway. The following figure shows M2M sensor 
+opted for a simple temperature and humidity sensor that will forward this 
+information to the M2M gateway. The following figure shows M2M sensor 
 nodes prototypes. Sensor nodes can be classified as follows.
 \begin{itemize}
-    \item \textbf{Simple Node :} Performs sensing and communication only. 
+    \item \textbf{Simple Nodes :} Perform sensing and communication only. 
     They do not possess any processing capabilities and cannot be 
     selected as a cluster head. This type of node is composed of a 
     temperature sensor and powered by a 3.7 V/1000 mAh battery. 
-    \item \textbf{Advanced Node :} Performs sensing, communication and 
+    \item \textbf{Advanced Nodes :} Perform sensing, communication and 
     processing of the data collected by the sensors. They can be 
     defined as cluster head. This type of node is composed of a 
     temperature and humidity sensor attached to an Arduino Uno board. 
     They are powered by a 9 V/1600 mAh battery.
-    \item \textbf{Sink Node :} This is the final destination for all the 
+    \item \textbf{Sink Nodes :} This is the final destination for all the 
     data that has been collected by the M2M sensor nodes. Depending 
-    on the application, it can either be mobile or static. In this 
+    on the application, they can either be mobile or static. In this 
     experiment, an Arduino Uno board has been used. Sink nodes can 
     communicate with simple or advanced nodes. They also have an 
     Internet access, bringing cloud-based data storage to the M2M 
@@ -378,8 +378,8 @@ tests were carried in indoor environments.
 It costs a lot of resources to manually discover each node in a 
 6LoWPAN network. Having the SDN controller automatically monitor the 
 status of all the nodes in the network constitutes a great improvement 
-regarding the discovery time and thus, the node's lifetime. The figure 2 
-(taken from \cite{main} shows the network discovery delay given a 
+regarding discovery time and thus, the node's lifetime. Figure 2 
+(taken from \cite{main}) shows the network discovery delay given a 
 certain number of nodes. A very clear improvement can be seen 
 on the graph. SD-NFV roughly reduces the discovery delay by 60\%. 
 
@@ -397,7 +397,7 @@ in energy usage. The experimental results focus on the advanced nodes
 because they play the important role of being a cluster head. Figure 3 
 \cite{main} shows the difference in node lifetime with and without SD-NFV. 
 SD-NFV manages to increase the node lifetime by approximately 65\% 
-by limiting unnecessary packets transmission. Virtualizing the network 
+by limiting unnecessary packet transmission. Virtualizing the network 
 in the SD-NFV gateway enables nodes to perform low-energy sleep mode in 
 order to limit energy consumption. Figure 4 \cite{main} shows the 
 node activity in relation to the node energy. With SD-NFV, nodes spend 
@@ -439,10 +439,10 @@ the application of SD-NFV to 5G mobile network such as \cite{5g}.
 \section{Conclusion}\label{sec:conclusion}
 
 Through the analysis of the given study, we have learned how IoT 
-applications are built and what are the problems we are currently facing. 
+applications are built and the problems we are currently facing. 
 The studied article provides a proof-of-concept for a potential 
 answer to these problems. Whilst the SD-NFV technology is still in its 
-early stages, it is interesting to keep an eye on the evolution of 
+early stage, it is interesting to keep an eye on the evolution of 
 this method to see how it will fare in the next few years.
 
 \begin{thebibliography}{9}
